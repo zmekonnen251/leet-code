@@ -3,21 +3,19 @@
  * @param {number} n
  * @return {number}
  */
-var myPow = function(a, b) {
+var myPow = function(x, n) {
     
-  if(b==0)      return 1            // base case  
-  else if(b==1) return a           // base case 
-  else if(b==-1)  return 1/a
-  else if(b%2==0){
-  		let t=myPow(a, b/2);
-      return t*t
-  }
-  else if(b%2!=0){
-  		return a*myPow(a,b-1)
-  }
-
-};
-  
-  
-    
+    if(n==0) return 1
+    else if(n==1) return x
+    else if(n==-1) return 1/x
+    else if(n%2==0){
+        let temp = myPow(x,n/2);
+        return temp*temp;
+    }
+    else if(n%2!==0){
+        return x*myPow(x,n-1);
+    }
    
+}
+
+
