@@ -10,32 +10,18 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var sumOfLeftLeaves = function(root) {
-		if(root===null){
-			return 0;
-		}else{
-			const sumHelper=(node)=>{
-				if(node===null){
-					return 0;
-				}
-                
-                let data = 0;
-                let leftSum = 0;
-                let rightSum = 0;
-                
-                if(node.left){
-                   if(!node.left.left && !node.left.right) data = node.left.val;
-                   leftSum = sumHelper(node.left);
-                }
-                
-				
-				if(node.right) rightSum = sumHelper(node.right);
-                
-				
-				return data+leftSum+rightSum;
-			}
-			return sumHelper(root);
+var sumOfLeftLeaves = function(node) {
+    if(node===null) return 0;
+	
+    let data = 0, leftSum = 0 , rightSum = 0;
     
-        }
-		
+    if(node.left){
+        if(!node.left.left && !node.left.right) data = node.left.val;
+        leftSum = sumOfLeftLeaves(node.left);
+    }
+    
+    if(node.right) rightSum = sumOfLeftLeaves(node.right);
+                   
+    return data+leftSum+rightSum;           
+                 		
 };
