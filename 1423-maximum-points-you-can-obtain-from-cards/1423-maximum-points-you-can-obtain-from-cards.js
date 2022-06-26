@@ -10,7 +10,11 @@ var maxScore = function(cardPoints, k) {
     for(let i = 0; i < k; i++){
         left = left + cardPoints[i];
     }
+    
+    if(k===cardPoints.length) return left;
+    
     let maxScore = left
+    
     for(let i = k - 1; i >= 0; i--){
         left = left - cardPoints[i]
         right = right + cardPoints[cardPoints.length-(k-i)]
