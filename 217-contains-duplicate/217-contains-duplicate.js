@@ -8,8 +8,8 @@ var containsDuplicate = function(nums) {
     for(let i=0;i<nums.length;i++){
         if(hashTable[nums[i]]===undefined) {
             hashTable[nums[i]]=i;
-        }else if(hashTable[nums[i]]!==undefined){
-            return true;
+        }else if(i!==nums.length){
+            return true
         }
         
     }
