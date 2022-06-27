@@ -13,12 +13,3 @@ var maxSubArray = function(nums) {
     
     return max_so_far;
 };
-
-// max_ending_here = arr[0]  //stores the sum of MSP till position 'i'
-// max_so_far = arr[0]       //stores the sum of MSP
-
-// for i = 1 to size_of_array
-// {
-//     max_ending_here = max(ar[i], max_ending_here + arr[i])
-//     max_so_far = max(max_so_far, max_ending_here)
-// }
