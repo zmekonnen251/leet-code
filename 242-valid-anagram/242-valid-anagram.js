@@ -20,7 +20,6 @@ var isAnagram = function(s, t) {
     }
     
     const hash_k = Object.values(hash);
-    console.log(hash_k)
     for(let k=0;k<hash_k.length;k++){
         if(isNaN(hash_k[k])) continue;
         return false;
